@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História da Internet e da Web</title>
+</head>
+
+<body>
+    <h1>História da Internet e da Web</h1>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="http.html">HTTP</a>
+        <a href="estados.html">Estados</a>
+        <a href="curriculo.html">Currículo</a>
+        <a href="contato.html">Contato</a>
+    </nav>
+    <hr>
+    <div>
+        <h2>1. Introdução: Internet e Web</h2>
+        <p>A <strong>Internet</strong> é a infraestrutura mundial de redes interconectadas que transporta dados
+            utilizando protocolos como IP.
+            A <strong>World Wide Web</strong> é um sistema de recursos e documentos interligados por hiperlinks,
+            acessados por navegadores por meio de HTTP ou HTTPS.</p>
+        <p><mark>A Internet não é sinônimo de Web:</mark> serviços como e-mail também utilizam a Internet, mas não
+            dependem necessariamente de páginas web.</p>
+        <p>O desenvolvimento dessas tecnologias envolveu pesquisadores, universidades, órgãos públicos e organizações
+            internacionais durante várias décadas.</p>
+        <p>Esta história tem duas camadas: primeiro foi necessário conectar computadores e redes; depois, criar uma
+            maneira simples de localizar e consultar documentos. Uma conexão com a Internet não significa que exista uma
+            página web: correio eletrônico, transferência de arquivos e outros serviços podem usar protocolos próprios.
+        </p>
+    </div>
+    <hr>
+    <h2>2. Linha do tempo da Internet e da Web</h2>
+    <ol>
+        <li><strong>Década de 1960:</strong> pesquisas sobre redes de computadores e comutação de pacotes,
+            técnica que divide informações em unidades transmitidas pela rede.</li>
+        <li><strong>1969:</strong> a ARPANET conecta inicialmente quatro instituições de pesquisa dos Estados Unidos,
+            demonstrando a viabilidade da comunicação entre computadores distantes.</li>
+        <li><strong>1972:</strong> o correio eletrônico ganha destaque na ARPANET como aplicação de comunicação entre
+            pessoas.</li>
+        <li><strong>1973–1974:</strong> Robert Kahn e Vint Cerf desenvolvem propostas para interligar redes diferentes,
+            contribuindo para os protocolos que formariam o TCP/IP.</li>
+        <li><strong>1983:</strong> a ARPANET realiza a transição para TCP/IP, marco importante para a Internet moderna.
+        </li>
+        <li><strong>1983–1984:</strong> o DNS é proposto e desenvolvido para organizar nomes de domínio de forma
+            distribuída.</li>
+        <li><strong>1986:</strong> a NSFNET impulsiona a conexão entre instituições acadêmicas e a expansão da
+            infraestrutura de redes.</li>
+        <li><strong>1989:</strong> Tim Berners-Lee apresenta no CERN uma proposta de gerenciamento de informações
+            baseada em hipertexto.</li>
+        <li><strong>1990:</strong> são desenvolvidos o HTML, o HTTP, o primeiro navegador/editor WorldWideWeb e o
+            primeiro servidor web em um computador NeXT.</li>
+        <li><strong>1991:</strong> a Web começa a ser disponibilizada para pesquisadores além da equipe original do
+            CERN.</li>
+        <li><strong>1993:</strong> o CERN disponibiliza publicamente o software da Web, favorecendo sua disseminação; o
+            navegador Mosaic também amplia a popularização da navegação gráfica.</li>
+        <li><strong>1994:</strong> a criação do W3C fortalece o desenvolvimento de padrões abertos para a Web.</li>
+        <li><strong>Anos 2000 em diante:</strong> blogs, redes sociais, plataformas colaborativas, comércio eletrônico e
+            aplicações interativas transformam o uso da Web.</li>
+    </ol>
+    <hr>
+    <div>
+        <h2>3. Redes, pacotes e ARPANET</h2>
+        <h3>Por que conectar computadores?</h3>
+        <p>Os primeiros computadores eram grandes e caros. Interligá-los permitiria compartilhar recursos, acessar
+            sistemas remotos e trocar informações entre universidades e laboratórios.</p>
+        <h3>Comutação de pacotes</h3>
+        <p>Na <strong>comutação de pacotes</strong>, os dados são divididos em partes que podem atravessar diferentes
+            caminhos. Essa abordagem tornou a comunicação entre computadores mais flexível e eficiente do que reservar
+            um circuito exclusivo para cada transmissão.</p>
+        <p>Um pacote transporta uma parte dos dados e informações de controle. Equipamentos intermediários recebem e
+            encaminham essas unidades. Várias comunicações compartilham os mesmos enlaces, aproveitando os intervalos
+            entre transmissões; não é necessário reservar um circuito exclusivo durante toda a conversa.</p>
+        <p>Esse compartilhamento também tem custos: filas podem aumentar a demora, e pacotes podem ser perdidos ou
+            chegar fora de ordem. Caminhos alternativos são possíveis quando a topologia e o roteamento permitem, mas
+            cada pacote não precisa seguir uma rota diferente. A confiabilidade depende também dos protocolos usados
+            pelos computadores nas extremidades.</p>
+        <p>A <em>ARPANET</em>, financiada pela ARPA, foi um importante ambiente experimental para tecnologias de rede.
+            Seu objetivo incluía a comunicação e o compartilhamento de recursos entre centros de pesquisa.</p>
+        <p>Em 1969, seus quatro primeiros pontos estavam na UCLA, no Stanford Research Institute, na Universidade da
+            Califórnia em Santa Bárbara e na Universidade de Utah. Os <abbr
+                title="Interface Message Processors">IMPs</abbr> eram equipamentos de comutação que ligavam os
+            computadores à rede.</p>
+        <p>A ARPANET não era a Web e ainda não reunia toda a Internet. Foi uma das redes precursoras: a etapa seguinte
+            seria fazer redes distintas cooperarem sem exigir que todas utilizassem o mesmo equipamento interno.</p>
+    </div>
+    <hr>
+    <div>
+        <h2>4. TCP/IP e DNS: fundamentos da Internet</h2>
+        <h3>TCP/IP</h3>
+        <p>O <strong>IP</strong> trata do endereçamento e encaminhamento de pacotes entre redes. O <strong>TCP</strong>
+            fornece transporte confiável e ordenado para aplicações que precisam dessa característica. O conjunto TCP/IP
+            permitiu interligar redes com tecnologias diferentes.</p>
+        <p>O IP oferece encaminhamento de melhor esforço: não garante sozinho a entrega, a ordem nem a ausência de
+            duplicações. Roteadores examinam os endereços e escolhem o próximo salto. O endereço IP ajuda a localizar
+            uma interface na rede, enquanto as portas de transporte identificam os serviços envolvidos na comunicação.
+        </p>
+        <p>O TCP organiza um fluxo de bytes com números de sequência, confirmações e retransmissões. Também controla o
+            envio para respeitar o receptor e reduzir congestionamentos. Ele não fornece criptografia por si só. Se a
+            conexão falhar definitivamente, a aplicação ainda precisa tratar o erro.</p>
+        <p>O trabalho de Vint Cerf e Robert Kahn sobre interconexão de redes evoluiu até a separação entre IP e TCP. A
+            migração da ARPANET de NCP para TCP/IP em <strong>1º de janeiro de 1983</strong> é um marco dessa
+            arquitetura. TCP/IP designa uma família de protocolos; nem todo tráfego da Internet utiliza TCP.</p>
+        <h3>DNS</h3>
+        <p>Com o crescimento da Internet, manter listas centralizadas de nomes e endereços tornou-se pouco prático. O
+            <strong>Domain Name System (DNS)</strong>, associado ao trabalho de Paul Mockapetris, introduziu uma
+            estrutura distribuída para consultar informações sobre domínios.</p>
+        <p>Antes do DNS, um arquivo central, chamado HOSTS.TXT, reunia associações entre nomes e endereços. Distribuir e
+            atualizar esse arquivo ficou difícil conforme cresceu o número de máquinas. O DNS distribuiu a administração
+            em uma hierarquia de domínios, com delegação de responsabilidade.</p>
+        <p>Ao acessar um site, o navegador pode consultar o DNS para descobrir um endereço IP associado ao nome do
+            servidor. Um resolvedor verifica seu cache e, se necessário, consulta a hierarquia até obter a resposta dos
+            servidores responsáveis pelo domínio.</p>
+        <p>Registros <strong>A</strong> informam endereços IPv4; <strong>AAAA</strong>, endereços IPv6; e
+            <strong>MX</strong>, servidores de correio eletrônico. Os resultados podem ficar em cache pelo período
+            indicado pelo TTL. Um nome pode ter vários endereços, e vários nomes podem compartilhar um endereço. DNS
+            localiza informações; não transporta o HTML da página.</p>
+    </div>
+    <hr>
+    <div>
+        <h2>5. Tim Berners-Lee e o nascimento da Web</h2>
+        <p>Em 1989, <strong>Tim Berners-Lee</strong>, pesquisador britânico do <em>CERN</em>, propôs um sistema de
+            hipertexto para facilitar o compartilhamento de documentos entre cientistas que utilizavam computadores
+            diferentes.</p>
+        <p>Segundo o CERN, a World Wide Web foi inventada por Berners-Lee em 1989. Em 1990, ele desenvolveu o primeiro
+            navegador/editor e o primeiro servidor web. Em <strong>30 de abril de 1993</strong>, o CERN disponibilizou
+            publicamente o software da Web, contribuindo para sua expansão.</p>
+        <p>O problema no CERN era manter acessíveis informações produzidas por equipes internacionais em sistemas
+            diferentes. O hipertexto permitiu relacionar documentos por links, sem impor uma sequência única de leitura.
+            Em 1990, Robert Cailliau colaborou na reformulação da proposta e na divulgação do projeto.</p>
+        <p>A solução combinou três componentes: <strong>HTML</strong> para marcar documentos, <strong>HTTP</strong> para
+            solicitá-los e transferi-los e endereços para identificar recursos. O navegador/editor WorldWideWeb e o
+            servidor CERN httpd tornaram essa combinação utilizável. O primeiro site explicava o próprio projeto.</p>
+        <p>O CERN é a Organização Europeia para a Pesquisa Nuclear, um laboratório de física de partículas. A Web surgiu
+            nesse ambiente científico e aproveitou a Internet já existente. Berners-Lee criou a Web, não a
+            infraestrutura inteira da Internet.</p>
+        <h3>Tim Berners-Lee</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/Tim_Berners-Lee_2012.jpg"
+            alt="Fotografia de Tim Berners-Lee, inventor da World Wide Web" width="250">
+        <p><span>Figura 1:</span> Tim Berners-Lee, criador da World Wide Web. Foto: cellanr, 2012, via <a
+                href="https://commons.wikimedia.org/wiki/File:Tim_Berners-Lee_2012.jpg">Wikimedia Commons</a>, <a
+                href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>.</p>
+        <h3>O primeiro servidor web</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/First_Web_Server.jpg"
+            alt="Computador NeXT usado como primeiro servidor web no CERN" width="350">
+        <p><span>Figura 2:</span> computador NeXT utilizado como servidor web no CERN. Foto: Coolcaesar, via <a
+                href="https://commons.wikimedia.org/wiki/File:First_Web_Server.jpg">Wikimedia Commons</a>, <a
+                href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p>
+    </div>
+    <hr>
+    <h2>6. HTML e glossário das principais tecnologias</h2>
+    <p><strong>HTML</strong> significa HyperText Markup Language. É uma linguagem de marcação: seus elementos descrevem
+        a estrutura e o significado do conteúdo. Títulos organizam o assunto; parágrafos desenvolvem ideias; links
+        conectam recursos. HTML não é um protocolo de transporte nem uma linguagem de programação.</p>
+    <p>Uma página completa declara o tipo de documento com &lt;!DOCTYPE html&gt;, informa o idioma no elemento html e
+        separa os metadados de head do conteúdo de body. A codificação UTF-8 preserva acentos. O atributo href indica o
+        destino de um link; src aponta para a imagem; e alt fornece uma alternativa textual significativa.</p>
+    <p>O navegador interpreta a marcação e constrói uma representação do documento, o DOM. Em projetos maiores, CSS
+        define a apresentação e JavaScript acrescenta comportamento. Este exercício continua usando somente HTML: os
+        títulos azuis e a fonte de código pertencem à formatação do Word, não a uma folha de estilos da página.</p>
+    <dl>
+        <dt><strong>ARPANET</strong></dt>
+        <dd>Rede experimental que contribuiu para o desenvolvimento da Internet.</dd>
+        <dt><strong>TCP/IP</strong></dt>
+        <dd>Conjunto de protocolos que permite a comunicação entre redes diferentes.</dd>
+        <dt><strong>DNS</strong></dt>
+        <dd>Sistema distribuído que associa nomes de domínio a registros, incluindo endereços IP.</dd>
+        <dt><strong>HTML</strong></dt>
+        <dd>Linguagem de marcação que estrutura títulos, parágrafos, links, listas, imagens e tabelas.</dd>
+        <dt><strong>HTTP</strong></dt>
+        <dd>Protocolo de requisição e resposta usado na transferência de recursos da Web.</dd>
+        <dt><strong>URL</strong></dt>
+        <dd>Endereço que identifica um recurso, como uma página ou imagem.</dd>
+        <dt><strong>Navegador</strong></dt>
+        <dd>Programa que solicita recursos, interpreta HTML e apresenta páginas ao usuário.</dd>
+        <dt><strong>Servidor web</strong></dt>
+        <dd>Sistema que recebe requisições e fornece recursos, como documentos HTML.</dd>
+    </dl>
+    <hr>
+    <h2>7. Tabela de marcos históricos</h2>
+    <table border="1">
+        <caption>Principais acontecimentos da evolução da Internet e da Web</caption>
+        <thead>
+            <tr>
+                <th>Ano</th>
+                <th>Acontecimento</th>
+                <th>Importância</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Década de 1960</td>
+                <td>Comutação de pacotes</td>
+                <td>Compartilhamento de enlaces para transmitir dados em unidades menores.</td>
+            </tr>
+            <tr>
+                <td>1969</td>
+                <td>ARPANET</td>
+                <td>Experimentos de comunicação entre computadores em rede.</td>
+            </tr>
+            <tr>
+                <td>1972</td>
+                <td>Correio eletrônico</td>
+                <td>Expansão da comunicação entre usuários conectados.</td>
+            </tr>
+            <tr>
+                <td>1983</td>
+                <td>TCP/IP</td>
+                <td>Interconexão padronizada entre redes diferentes.</td>
+            </tr>
+            <tr>
+                <td>1983–1984</td>
+                <td>DNS</td>
+                <td>Organização distribuída de nomes de domínio.</td>
+            </tr>
+            <tr>
+                <td>1989</td>
+                <td>Proposta da Web</td>
+                <td>Projeto de hipertexto de Tim Berners-Lee no CERN.</td>
+            </tr>
+            <tr>
+                <td>1990</td>
+                <td>HTML, HTTP, navegador e servidor</td>
+                <td>Implementação das bases da World Wide Web.</td>
+            </tr>
+            <tr>
+                <td>1993</td>
+                <td>Software da Web liberado pelo CERN</td>
+                <td>Facilitou a adoção e a disseminação da tecnologia.</td>
+            </tr>
+            <tr>
+                <td>1994</td>
+                <td>W3C</td>
+                <td>Coordenação de padrões abertos para a Web.</td>
+            </tr>
+            <tr>
+                <td>1991</td>
+                <td>Divulgação da Web</td>
+                <td>O projeto alcança uma comunidade além da equipe inicial do CERN.</td>
+            </tr>
+            <tr>
+                <td>Anos 2000</td>
+                <td>Colaboração e conteúdo dos usuários</td>
+                <td>Expansão de blogs, wikis e redes sociais.</td>
+            </tr>
+            <tr>
+                <td>2022</td>
+                <td>HTTP/3 publicado como RFC 9114</td>
+                <td>Semântica HTTP transportada por QUIC.</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">Fontes: CERN, W3C e Internet Society.</td>
+            </tr>
+        </tfoot>
+    </table>
+    <hr>
+    <h2>8. Como uma página chega ao navegador?</h2>
+    <p>Considere uma visita a https://info.cern.ch/hypertext/WWW/TheProject.html. O esquema indica HTTPS, info.cern.ch é
+        o nome do servidor e o restante é o caminho do recurso. Uma URL ainda pode incluir porta, parâmetros de consulta
+        e fragmento.</p>
+    <p><strong>Navegador</strong> é o cliente que solicita e apresenta recursos. <strong>Servidor web</strong> é o
+        software que recebe requisições e prepara respostas; a expressão também pode se referir à máquina que o executa.
+        Uma máquina pode hospedar vários sites, e um site pode ser atendido por várias máquinas.</p>
+    <ol>
+        <li>O usuário digita uma URL no navegador.</li>
+        <li>O DNS pode ser consultado para localizar o endereço IP do servidor.</li>
+        <li>O navegador estabelece ou reutiliza a comunicação com o servidor. Em HTTPS com HTTP/1.1 ou HTTP/2,
+            normalmente utiliza TCP e a proteção TLS; HTTP/3 utiliza QUIC sobre UDP, com segurança integrada.</li>
+        <li>O cliente envia uma requisição HTTP ou HTTPS.</li>
+        <li>O servidor procura o recurso ou executa a aplicação e devolve uma resposta com código de estado, cabeçalhos
+            e, quando cabível, corpo. Uma resposta 200 pode trazer HTML; uma 404 informa que o recurso não foi
+            encontrado.</li>
+        <li>O navegador interpreta o HTML, solicita recursos adicionais, como as duas imagens desta página, e apresenta
+            o resultado. Cache e conexões já abertas podem evitar a repetição de algumas etapas.</li>
+    </ol>
+    <p>HTTP organiza trocas de <em>requisição e resposta</em>. GET costuma solicitar a representação de um recurso,
+        enquanto POST envia dados para processamento. Cabeçalhos informam, por exemplo, o tipo de conteúdo e regras de
+        cache. O protocolo não se limita a páginas: também pode transferir imagens e dados de APIs.</p>
+    <p>HTTP é sem estado: uma requisição não mantém automaticamente a memória de visitas anteriores. Cookies e
+        mecanismos de sessão permitem que aplicações relacionem solicitações a um usuário. HTTPS protege os dados em
+        trânsito com criptografia e autenticação do servidor; essa proteção não substitui a segurança da aplicação.</p>
+    <p>Ao abrir historia_web.html diretamente do computador, o navegador usa um arquivo local. Ao publicá-lo em um
+        serviço de hospedagem, o navegador passa a solicitá-lo por HTTP ou HTTPS. O conteúdo HTML pode ser o mesmo, mas
+        o caminho de acesso muda.</p>
+    <hr>
+    <h2>9. Web 1.0, Web 2.0 e aplicações modernas</h2>
+    <h3>Web 1.0: publicação e leitura</h3>
+    <p>A expressão <strong>Web 1.0</strong> é frequentemente usada para caracterizar a fase inicial de popularização da
+        Web, quando predominavam páginas estáticas e a consulta de informações. Uma equipe publicava documentos e os
+        visitantes navegavam por links, diretórios e mecanismos de busca.</p>
+    <p>Essa classificação é retrospectiva e aproximada: já existiam formulários e páginas geradas por programas.
+        Portanto, Web 1.0 não significa ausência absoluta de interação, e não existe uma data única em que todos os
+        sites passaram para outra fase.</p>
+    <h3>Web 2.0: colaboração e participação</h3>
+    <p>A expressão <strong>Web 2.0</strong> descreve a ampliação da participação dos usuários na produção de conteúdo,
+        como blogs, wikis, redes sociais e plataformas de vídeos. Não se trata de uma nova versão técnica do protocolo
+        HTTP.</p>
+    <h3>Aplicações web modernas</h3>
+    <p>A Web também funciona como plataforma para sistemas complexos: lojas virtuais, bancos digitais, ambientes de
+        ensino, documentos colaborativos e videoconferências. O servidor pode gerar HTML a partir de dados; o navegador
+        também pode solicitar dados de uma API e atualizar apenas parte da interface.</p>
+    <p>Em uma loja virtual, por exemplo, o catálogo pode vir de um banco de dados.
+        A seleção de um produto gera novas solicitações, e o servidor verifica disponibilidade e regras de compra.
+        A interface é apenas uma parte do sistema: autenticação, validação e armazenamento também precisam funcionar
+        corretamente.</p>
+    <p>Web 1.0 e Web 2.0 descrevem tendências de uso e publicação; não são versões de HTML, HTTP ou da Internet. Páginas
+        estáticas continuam úteis para materiais de estudo como este. Aplicações modernas combinam recursos conforme a
+        necessidade, mantendo HTML e links como fundamentos.</p>
+    <ul>
+        <li>Interatividade e atualização dinâmica de conteúdos.</li>
+        <li>Integração entre sistemas por meio de APIs.</li>
+        <li>Aplicações acessíveis em computadores e celulares.</li>
+        <li>Serviços em nuvem e comunicação em tempo real.</li>
+    </ul>
+    <hr>
+    <h2>10. Recursos de formatação em HTML</h2>
+    <p>O HTML também representa notações técnicas: um octeto possui 2
+        <sup>8</sup> combinações de bits, e a referência a uma variável pode usar índice, como pacote
+        <sub>1</sub>. As tags <strong>sub</strong> e <strong>sup</strong> representam subscrito e sobrescrito.
+    </p>
+    <p>Uma quebra explícita pode separar duas linhas relacionadas:<br>Internet: infraestrutura de redes.
+        <br>Web: recursos interligados acessados sobre essa infraestrutura.
+    </p>
+    <p><span>Exemplo de destaque:</span> <mark>HTML estrutura o conteúdo; o navegador o apresenta ao usuário.</mark></p>
+    <hr>
+    <h2>11. Fontes de pesquisa</h2>
+    <ul>
+        <li><a href="https://home.cern/science/computing/the-birth-of-the-web" target="_blank"
+                rel="noopener noreferrer">
+                CERN — O nascimento da Web</a></li>
+        <li><a href="https://www.w3.org/People/Berners-Lee/" target="_blank" rel="noopener noreferrer">W3C — Tim
+                Berners-Lee</a></li>
+        <li><a href="https://www.internetsociety.org/internet/history-internet/brief-history-internet/" target="_blank"
+                rel="noopener noreferrer">Internet Society — História da Internet</a></li>
+        <li><a href="https://www.rfc-editor.org/rfc/rfc1034">RFC 1034 — Conceitos e organização do DNS</a></li>
+        <li><a href="https://www.rfc-editor.org/rfc/rfc9293.html">RFC 9293 — Funcionamento do TCP</a></li>
+        <li><a href="https://www.rfc-editor.org/rfc/rfc9114.html">RFC 9114 — HTTP/3</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview">MDN — Visão geral do HTTP</a>
+        </li>
+        <li><a
+                href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax">
+                MDN — Estrutura e sintaxe do HTML</a></li>
+        <li><a href="https://www.w3.org/History.html">W3C — Cronologia da Web</a></li>
+    </ul>
+    <hr>
+    <h2>12. Conclusão</h2>
+    <p>A Internet nasceu da evolução de redes de computadores e protocolos de comunicação. A Web, criada décadas depois,
+        aproveitou essa infraestrutura para tornar documentos e serviços acessíveis por links e navegadores.</p>
+    <p>Da ARPANET às aplicações modernas, essa evolução demonstra a importância da pesquisa, da colaboração e dos
+        padrões abertos para a sociedade digital.</p>
+    <p><a href="index.html">Voltar à página inicial</a></p>
+</body>
+
+</html>

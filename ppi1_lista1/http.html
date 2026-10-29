@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP na prática: requisição e resposta</title>
+</head>
+
+<body>
+    <header>
+        <h1>HTTP na prática: requisição e resposta</h1>
+        <nav aria-label="Menu do Portal de Estudos">
+            <a href="index.html">Início</a> |
+            <a href="historia_web.html">História da Web</a> |
+            <a href="estados.html">Estados</a> |
+            <a href="curriculo.html">Currículo</a> |
+            <a href="contato.html">Contato</a>
+        </nav>
+    </header>
+    <hr>
+    <main>
+        <section id="papel-http">
+            <h2>1. O papel do HTTP na Web</h2>
+            <p>
+                <strong>HTTP</strong> significa <em>Hypertext Transfer Protocol</em>,
+                ou Protocolo de Transferência de Hipertexto. Ele define como
+                clientes e servidores trocam mensagens para solicitar recursos,
+                enviar dados e informar o resultado de uma operação.
+            </p>
+            <p>
+                Quando você visita uma página, o navegador solicita seu HTML.
+                Ao interpretá-lo, pode fazer outras requisições para buscar
+                imagens e demais arquivos. Uma página pode, portanto, depender
+                de várias trocas de mensagens, inclusive com servidores diferentes.
+            </p>
+            <p>
+                <strong>HTML</strong> estrutura o conteúdo; <strong>HTTP</strong>
+                organiza sua transferência. HTTPS utiliza os mesmos conceitos
+                de requisição e resposta com proteção criptográfica em trânsito.
+                Usar POST, sozinho, não criptografa os dados.
+            </p>
+        </section>
+        <hr>
+        <section id="conceitos">
+            <h2>2. Cliente, servidor, requisição e resposta</h2>
+            <dl>
+                <dt><strong>Cliente</strong></dt>
+                <dd>
+                    Programa que inicia uma solicitação. O navegador é um
+                    exemplo; aplicativos e ferramentas também podem ser clientes.
+                </dd>
+                <dt><strong>Servidor</strong></dt>
+                <dd>
+                    Software que recebe solicitações e fornece respostas.
+                    Pode entregar um arquivo ou executar uma aplicação para
+                    gerar conteúdo. Não precisa ser uma única máquina.
+                </dd>
+                <dt><strong>Requisição</strong></dt>
+                <dd>
+                    Mensagem enviada pelo cliente com um método, o recurso
+                    desejado, cabeçalhos e, quando aplicável, um corpo com dados.
+                </dd>
+                <dt><strong>Resposta</strong></dt>
+                <dd>
+                    Mensagem do servidor com um código de status, cabeçalhos e,
+                    quando cabível, um corpo, como HTML, uma imagem ou dados.
+                </dd>
+            </dl>
+            <h3>O ciclo de comunicação</h3>
+            <ol>
+                <li>O usuário informa uma URL ou aciona um link no navegador.</li>
+                <li>
+                    Se necessário, o navegador resolve o nome pelo DNS e
+                    estabelece uma conexão com o servidor.
+                </li>
+                <li>O cliente envia a requisição HTTP.</li>
+                <li>O servidor processa a solicitação e prepara a resposta.</li>
+                <li>
+                    O navegador interpreta o resultado e solicita outros recursos
+                    necessários para apresentar a página.
+                </li>
+            </ol>
+            <p>
+                HTTP é <strong>sem estado</strong>: não mantém automaticamente
+                uma memória das visitas. Cookies e mecanismos de sessão podem
+                relacionar requisições a um usuário, por exemplo, após um login.
+            </p>
+        </section>
+        <hr>
+        <section id="metodos">
+            <h2>3. Métodos GET e POST</h2>
+            <h3>GET: consultar um recurso</h3>
+            <p>
+                GET solicita a representação de um recurso. Exemplos: abrir uma
+                página, carregar uma imagem e consultar resultados de uma busca.
+                Parâmetros podem aparecer na URL, como
+                <code>/busca?tema=http</code>.
+            </p>
+            <p>
+                GET é considerado seguro no sentido do protocolo: sua finalidade
+                é consultar, sem solicitar uma alteração no servidor. Também é
+                idempotente: repeti-lo deve ter o mesmo efeito pretendido de uma
+                única solicitação, embora o conteúdo retornado possa mudar.
+                Esses termos não significam criptografia.
+            </p>
+            <h3>POST: enviar dados para processamento</h3>
+            <p>
+                POST envia dados para o servidor processar conforme as regras
+                do recurso. É comum em cadastros, envio de mensagens e criação
+                de pedidos. Os dados costumam ir no corpo da requisição.
+            </p>
+            <p>
+                POST não é idempotente por definição: repetir um envio pode
+                criar duas mensagens ou dois pedidos. O cabeçalho
+                <code>Content-Type</code> informa o formato do corpo, como
+                dados de formulário ou JSON.
+            </p>
+            <p>
+                <mark>GET consulta; POST envia dados para processamento.</mark>
+                Dados sensíveis não devem ser colocados em parâmetros da URL,
+                que podem aparecer no histórico e em registros.
+                Em ambos os métodos, a proteção em trânsito depende de HTTPS.
+            </p>
+        </section>
+        <hr>
+        <section id="requisicao">
+            <h2>4. Exemplos de requisição HTTP</h2>
+            <p>
+                Os exemplos são didáticos e usam a representação textual do
+                <strong>HTTP/1.1</strong>. HTTP/2 e HTTP/3 mantêm conceitos como
+                métodos e status, mas usam outro formato de transmissão.
+                O domínio example.org representa um servidor de exemplo.
+            </p>
+            <h3>Requisição GET</h3>
+            <pre><code>GET /http.html HTTP/1.1
+Host: example.org
+Accept: text/html
+
+</code></pre>
+            <ul>
+                <li><code>GET</code>: método utilizado para consultar.</li>
+                <li><code>/http.html</code>: caminho do recurso solicitado.</li>
+                <li><code>HTTP/1.1</code>: versão usada na mensagem ilustrada.</li>
+                <li><code>Host</code>: identifica o servidor de destino.</li>
+                <li><code>Accept</code>: informa um tipo de conteúdo aceito.</li>
+            </ul>
+            <p>
+                A linha vazia encerra os cabeçalhos. Neste exemplo de GET,
+                não há corpo de requisição.
+            </p>
+            <h3>Requisição POST</h3>
+            <pre><code>POST /mensagens HTTP/1.1
+Host: example.org
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 23
+
+nome=Breno&amp;assunto=HTTP</code></pre>
+            <p>
+                O corpo contém os campos nome e assunto. O caractere
+                <code>&amp;</code> separa os pares de campo e valor;
+                <code>Content-Length</code> informa o tamanho do corpo em bytes.
+                Um servidor com a rota <code>/mensagens</code> precisaria
+                receber, validar e processar esses dados.
+            </p>
+            <p>
+                Este bloco apenas mostra uma mensagem: não envia dados.
+                Uma página estática de HTML precisa de um serviço de
+                processamento para receber um formulário enviado por POST.
+            </p>
+        </section>
+        <hr>
+        <section id="resposta">
+            <h2>5. Exemplo de resposta HTTP</h2>
+            <p>
+                Para ilustrar uma resposta ao GET, considere que o servidor
+                devolveu o pequeno documento HTML abaixo:
+            </p>
+            <pre><code>HTTP/1.1 200 OK
+Content-Type: text/html; charset=UTF-8
+Content-Length: 124
+
+&lt;!DOCTYPE html&gt;&lt;html lang="pt-BR"&gt;&lt;head&gt;&lt;meta
+charset="UTF-8"&gt;&lt;title&gt;Exemplo&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;Ola!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;</code>
+</pre>
+            <ul>
+                <li><code>200 OK</code>: a solicitação foi atendida com sucesso.</li>
+                <li>
+                    <code>Content-Type</code>: o corpo contém HTML codificado
+                    em UTF-8.
+                </li>
+                <li>
+                    <code>Content-Length</code>: número de bytes do corpo
+                    ilustrado, sem uma quebra adicional ao final.
+                </li>
+                <li>
+                    A linha vazia separa os cabeçalhos do corpo; o corpo
+                    contém o documento que o navegador poderá interpretar.
+                </li>
+            </ul>
+            <p>
+                O HTML aparece como texto neste exemplo porque os caracteres
+                de marcação foram escapados. Na comunicação real, o servidor
+                transmite os caracteres do documento, sem esse escape didático.
+            </p>
+        </section>
+        <hr>
+        <section id="status">
+            <h2>6. Códigos de status HTTP</h2>
+            <p>
+                O primeiro dígito indica a categoria: <strong>1xx</strong>,
+                informação; <strong>2xx</strong>, sucesso; <strong>3xx</strong>,
+                redirecionamento; <strong>4xx</strong>, erro relacionado à
+                solicitação; e <strong>5xx</strong>, erro no servidor.
+            </p>
+            <table border="1">
+                <caption>Significado e exemplo de sete códigos HTTP</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Código</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Significado e exemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>200</td>
+                        <td>OK</td>
+                        <td>Sucesso. Exemplo: a página solicitada foi entregue.</td>
+                    </tr>
+                    <tr>
+                        <td>301</td>
+                        <td>Moved Permanently</td>
+                        <td>
+                            O recurso ganhou um endereço permanente.
+                            O cabeçalho Location indica o destino.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>302</td>
+                        <td>Found</td>
+                        <td>
+                            Redirecionamento temporário. Exemplo: enviar o
+                            visitante a uma página temporária de campanha.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>400</td>
+                        <td>Bad Request</td>
+                        <td>
+                            O servidor não pode ou não quer processar a mensagem
+                            por um erro percebido na solicitação, como sintaxe
+                            inválida.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>403</td>
+                        <td>Forbidden</td>
+                        <td>
+                            O servidor entendeu, mas recusou atender.
+                            Exemplo: acesso negado a uma área restrita.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>404</td>
+                        <td>Not Found</td>
+                        <td>
+                            O recurso não foi encontrado ou o servidor não
+                            deseja revelar sua existência.
+                            Exemplo: caminho de página inexistente.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>500</td>
+                        <td>Internal Server Error</td>
+                        <td>
+                            Uma condição inesperada impediu o atendimento.
+                            Exemplo: falha interna na aplicação do servidor.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                O status informa o resultado, mas nem sempre revela a causa
+                completa. Um erro de DNS ou uma conexão recusada pode acontecer
+                antes de existir qualquer resposta HTTP.
+            </p>
+        </section>
+        <hr>
+        <section id="pratica">
+            <h2>7. Como observar HTTP na prática</h2>
+            <ol>
+                <li>Abra uma página publicada por HTTP ou HTTPS.</li>
+                <li>
+                    Abra as ferramentas do desenvolvedor do navegador e
+                    selecione a aba Rede ou Network.
+                </li>
+                <li>Recarregue a página e selecione a solicitação do documento.</li>
+                <li>
+                    Observe URL, método, status, cabeçalhos e conteúdo da resposta.
+                    Outras linhas podem corresponder a imagens e arquivos.
+                </li>
+            </ol>
+            <p>
+                Ao abrir este arquivo diretamente no computador com
+                <code>file://</code>, a leitura é local e não demonstra uma
+                troca HTTP com um servidor. Use uma versão hospedada para
+                observar a comunicação descrita.
+            </p>
+        </section>
+        <hr>
+        <section id="fontes">
+            <h2>8. Fontes para consulta</h2>
+            <ul>
+                <li>
+                    <a href="https://www.w3schools.com/whatis/whatis_http.asp">
+                        W3Schools: o que é HTTP</a>
+                </li>
+                <li>
+                    <a href="https://www.w3schools.com/tags/ref_httpmethods.asp">
+                        W3Schools: métodos HTTP, GET e POST</a>
+                </li>
+                <li>
+                    <a href="https://www.w3schools.com/html/html_forms_attributes.asp">
+                        W3Schools: formulários e atributos GET e POST</a>
+                </li>
+                <li>
+                    <a href="https://www.w3schools.com/tags/ref_httpmessages.asp">
+                        W3Schools: códigos de status HTTP</a>
+                </li>
+                <li>
+                    <a href="https://www.w3schools.com/html/">
+                        W3Schools: tutorial de HTML</a>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <hr>
+    <footer>
+        <p>
+            HTTP permite ao cliente solicitar recursos e enviar dados, e ao
+            servidor responder com conteúdo e um resultado identificável.
+        </p>
+        <p><a href="index.html">Voltar ao início</a></p>
+    </footer>
+</body>
+
+</html>

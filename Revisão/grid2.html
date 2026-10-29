@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+
+    <style>
+        * {
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+
+        .main {
+            display: grid;
+            grid-template-rows: 100px 200px 100px;
+            grid-template-columns: 1fr 2fr 1fr;
+
+            grid-template-areas:
+                "header header header"
+                "menu   secao  aside"
+                "rodape rodape rodape";
+        }
+
+        header {
+            grid-area: header;
+            text-align: center;
+        }
+
+        menu {
+            grid-area: menu;
+            text-align: ;
+        }
+
+        section {
+            grid-area: secao;
+        }
+
+        aside {
+            grid-area: aside;
+        }
+
+        footer {
+            grid-area: rodape;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <header>Header</header>
+        <menu>Menu</menu>
+        <section>Seção</section>
+        <aside>Aside</aside>
+        <footer>Rodapé</footer>
+    </div>
+</body>
+</html>

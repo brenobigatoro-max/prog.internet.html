@@ -74,15 +74,17 @@
         <p>Um pacote transporta uma parte dos dados e informações de controle. Equipamentos intermediários recebem e
             encaminham essas unidades. Várias comunicações compartilham os mesmos enlaces, aproveitando os intervalos
             entre transmissões; não é necessário reservar um circuito exclusivo durante toda a conversa.</p>
+
         <p>Esse compartilhamento também tem custos: filas podem aumentar a demora, e pacotes podem ser perdidos ou
             chegar fora de ordem. Caminhos alternativos são possíveis quando a topologia e o roteamento permitem, mas
             cada pacote não precisa seguir uma rota diferente. A confiabilidade depende também dos protocolos usados
             pelos computadores nas extremidades.</p>
+
         <p>A <em>ARPANET</em>, financiada pela ARPA, foi um importante ambiente experimental para tecnologias de rede.
             Seu objetivo incluía a comunicação e o compartilhamento de recursos entre centros de pesquisa.</p>
         <p>Em 1969, seus quatro primeiros pontos estavam na UCLA, no Stanford Research Institute, na Universidade da
-            Califórnia em Santa Bárbara e na Universidade de Utah. Os <abbr
-                title="Interface Message Processors">IMPs</abbr> eram equipamentos de comutação que ligavam os
+            Califórnia em Santa Bárbara e na Universidade de Utah. 
+            Os<abbr title="Interface Message Processors">IMPs</abbr> eram equipamentos de comutação que ligavam os
             computadores à rede.</p>
         <p>A ARPANET não era a Web e ainda não reunia toda a Internet. Foi uma das redes precursoras: a etapa seguinte
             seria fazer redes distintas cooperarem sem exigir que todas utilizassem o mesmo equipamento interno.</p>
@@ -101,13 +103,16 @@
         <p>O TCP organiza um fluxo de bytes com números de sequência, confirmações e retransmissões. Também controla o
             envio para respeitar o receptor e reduzir congestionamentos. Ele não fornece criptografia por si só. Se a
             conexão falhar definitivamente, a aplicação ainda precisa tratar o erro.</p>
+
         <p>O trabalho de Vint Cerf e Robert Kahn sobre interconexão de redes evoluiu até a separação entre IP e TCP. A
             migração da ARPANET de NCP para TCP/IP em <strong>1º de janeiro de 1983</strong> é um marco dessa
             arquitetura. TCP/IP designa uma família de protocolos; nem todo tráfego da Internet utiliza TCP.</p>
+
         <h3>DNS</h3>
         <p>Com o crescimento da Internet, manter listas centralizadas de nomes e endereços tornou-se pouco prático. O
             <strong>Domain Name System (DNS)</strong>, associado ao trabalho de Paul Mockapetris, introduziu uma
             estrutura distribuída para consultar informações sobre domínios.</p>
+
         <p>Antes do DNS, um arquivo central, chamado HOSTS.TXT, reunia associações entre nomes e endereços. Distribuir e
             atualizar esse arquivo ficou difícil conforme cresceu o número de máquinas. O DNS distribuiu a administração
             em uma hierarquia de domínios, com delegação de responsabilidade.</p>
@@ -125,18 +130,23 @@
         <p>Em 1989, <strong>Tim Berners-Lee</strong>, pesquisador britânico do <em>CERN</em>, propôs um sistema de
             hipertexto para facilitar o compartilhamento de documentos entre cientistas que utilizavam computadores
             diferentes.</p>
+
         <p>Segundo o CERN, a World Wide Web foi inventada por Berners-Lee em 1989. Em 1990, ele desenvolveu o primeiro
             navegador/editor e o primeiro servidor web. Em <strong>30 de abril de 1993</strong>, o CERN disponibilizou
             publicamente o software da Web, contribuindo para sua expansão.</p>
+
         <p>O problema no CERN era manter acessíveis informações produzidas por equipes internacionais em sistemas
             diferentes. O hipertexto permitiu relacionar documentos por links, sem impor uma sequência única de leitura.
             Em 1990, Robert Cailliau colaborou na reformulação da proposta e na divulgação do projeto.</p>
+
         <p>A solução combinou três componentes: <strong>HTML</strong> para marcar documentos, <strong>HTTP</strong> para
             solicitá-los e transferi-los e endereços para identificar recursos. O navegador/editor WorldWideWeb e o
             servidor CERN httpd tornaram essa combinação utilizável. O primeiro site explicava o próprio projeto.</p>
+
         <p>O CERN é a Organização Europeia para a Pesquisa Nuclear, um laboratório de física de partículas. A Web surgiu
             nesse ambiente científico e aproveitou a Internet já existente. Berners-Lee criou a Web, não a
             infraestrutura inteira da Internet.</p>
+
         <h3>Tim Berners-Lee</h3>
         <img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/Tim_Berners-Lee_2012.jpg"
             alt="Fotografia de Tim Berners-Lee, inventor da World Wide Web" width="250">
@@ -330,8 +340,7 @@
     <hr>
     <h2>11. Fontes de pesquisa</h2>
     <ul>
-        <li><a href="https://home.cern/science/computing/the-birth-of-the-web" target="_blank"
-                rel="noopener noreferrer">
+        <li><a href="https://home.cern/science/computing/the-birth-of-the-web" target="_blank" rel="noopener noreferrer">
                 CERN — O nascimento da Web</a></li>
         <li><a href="https://www.w3.org/People/Berners-Lee/" target="_blank" rel="noopener noreferrer">W3C — Tim
                 Berners-Lee</a></li>
@@ -354,6 +363,6 @@
     <p>Da ARPANET às aplicações modernas, essa evolução demonstra a importância da pesquisa, da colaboração e dos
         padrões abertos para a sociedade digital.</p>
     <p><a href="index.html">Voltar à página inicial</a></p>
-</body>
-
-</html>
+    </body>
+    
+    </html>

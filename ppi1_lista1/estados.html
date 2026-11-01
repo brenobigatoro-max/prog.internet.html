@@ -9,7 +9,7 @@
 <body>
     <h1>Estados Brasileiros</h1>
 
-    <nav>
+    <nav aria-label="Menu do Portal de Estudos">
         <a href="index.html">Início</a> |
         <a href="historia_web.html">História da Web</a> |
         <a href="http.html">HTTP</a> |
@@ -28,14 +28,14 @@
 
     <h2>Exemplos de estados</h2>
 
-    <table border="1">
+    <table>
         <caption>Estados, capitais e regiões</caption>
 
         <thead>
             <tr>
-                <th>Estado</th>
-                <th>Capital</th>
-                <th>Região</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Capital</th>
+                <th scope="col">Região</th>
             </tr>
         </thead>
 
@@ -87,7 +87,11 @@
         <li>Sudeste</li>
         <li>Sul</li>
     </ul>
+
     <hr>
-    <p><a href="index.html">Voltar ao início</a></p>
+
+    <p>
+        <a href="index.html">Voltar ao início</a>
+    </p>
 </body>
 </html>

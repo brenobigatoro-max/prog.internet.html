@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galeria com Flexbox e transição</title>
+
+  <style>
+
+    * { box-sizing: border-box; }
+
+    body {
+
+      margin: 0;
+
+      min-height: 100vh;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 24px;
+
+      background: #f4f4f7;
+
+      font-family: Arial, sans-serif;
+
+    }
+
+    .galeria { display: flex; gap: 12px; width: min(900px, 100%); }
+
+    .cartao {
+
+      position: relative;
+
+      display: block;
+
+      flex: 1;
+
+      min-width: 0;
+
+      height: 360px;
+
+      overflow: hidden;
+
+      border-radius: 30px;
+
+      color: white;
+
+      transition: flex 600ms ease;
+
+    }
+
+    .cartao img {
+
+      position: absolute;
+
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: cover;
+
+    }
+
+    .cartao::after {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 55% 0 0;
+
+      background: linear-gradient(transparent, #0009);
+
+    }
+
+    .cartao:nth-child(2) { flex: 5; }
+
+    .galeria:hover .cartao, .galeria:focus-within .cartao { flex: 1; }
+
+    .galeria .cartao:hover, .galeria .cartao:focus { flex: 5; }
+
+    .cartao:focus-visible { outline: 4px solid #164e86; outline-offset: 3px; }
+
+    .icone {
+
+      position: absolute;
+
+      z-index: 1;
+
+      left: 10px;
+
+      bottom: 12px;
+
+      display: grid;
+
+      place-items: center;
+
+      width: 32px;
+
+      height: 32px;
+
+      border-radius: 50%;
+
+      background: white;
+
+      color: #16836b;
+
+      font-weight: bold;
+
+    }
+
+    .legenda {
+
+      position: absolute;
+
+      z-index: 1;
+
+      left: 54px;
+
+      bottom: 19px;
+
+      white-space: nowrap;
+
+      opacity: 0;
+
+      transition: opacity 300ms ease;
+
+    }
+
+    .cartao:nth-child(2) .legenda { opacity: 1; }
+
+    .galeria:hover .legenda, .galeria:focus-within .legenda { opacity: 0; }
+
+    .galeria .cartao:hover .legenda, .galeria .cartao:focus .legenda {
+
+      opacity: 1;
+
+    }
+
+    @media screen and (max-width: 600px) {
+
+      body { padding: 12px; }
+
+      .galeria { gap: 6px; }
+
+      .cartao { height: 300px; border-radius: 20px; }
+
+      .icone { width: 24px; height: 24px; left: 6px; }
+
+      .legenda { left: 36px; font-size: 12px; }
+
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .cartao, .legenda { transition: none; }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="galeria" aria-label="Galeria de paisagens">
+
+    <a class="cartao" href="imagens/paisagem-1.jpg">
+
+      <img src="imagens/paisagem-1.jpg" alt="Paisagem 1">
+
+      <span class="icone" aria-hidden="true">1</span>
+
+      <span class="legenda">Paisagem 1</span>
+
+    </a>
+
+    <a class="cartao" href="imagens/paisagem-2.jpg">
+
+      <img src="imagens/paisagem-2.jpg" alt="Paisagem 2">
+
+      <span class="icone" aria-hidden="true">2</span>
+
+      <span class="legenda">Paisagem 2</span>
+
+    </a>
+
+    <a class="cartao" href="imagens/paisagem-3.jpg">
+
+      <img src="imagens/paisagem-3.jpg" alt="Paisagem 3">
+
+      <span class="icone" aria-hidden="true">3</span>
+
+      <span class="legenda">Paisagem 3</span>
+
+    </a>
+
+    <a class="cartao" href="imagens/paisagem-4.jpg">
+
+      <img src="imagens/paisagem-4.jpg" alt="Paisagem 4">
+
+      <span class="icone" aria-hidden="true">4</span>
+
+      <span class="legenda">Paisagem 4</span>
+
+    </a>
+
+    <a class="cartao" href="imagens/paisagem-5.jpg">
+
+      <img src="imagens/paisagem-5.jpg" alt="Paisagem 5">
+
+      <span class="icone" aria-hidden="true">5</span>
+
+      <span class="legenda">Paisagem 5</span>
+    </a>
+  </div>
+</body>

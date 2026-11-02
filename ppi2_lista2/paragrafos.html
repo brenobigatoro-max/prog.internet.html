@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fontes cores e palavras em destaque</title>
+</head>
+    <syle>
+        body{ margin: 32px; line-height:1.7;
+        }
+        h1{ front-family: arial, sans-serif; color: #164e86
+        }
+        .primeiro { front-family: arial, sans-serif; color: #174d84;
+        }
+        .segundo { front-family: georgia, sans-serif; color: #8b2351;
+        }
+        .terceiro {  front-family: "Courier New", monospace; color: #17623d;}
+        .quarto { front-family: Verdana, sans-serif; color: #794414; 
+        }
+        .destaque{
+            background-color: #fff0a6;
+            color: #202020;
+            font-weight: bold;
+            padding: 2px 4px;
+
+        }
+        .segundo >span { text-decoration: underline; }
+        .terceiro > span { border-bottom: 2px solid #17623d; }
+        .quarta > span { font-style: italic;}
+    </syle>
+    </head>
+</body>
+<h1>Fontes, cores e palavras com CSS </h1>
+<p class="primeiro">
+<span class="destaque"> Lorem ipsum</span> dolor sit amet,
+consectetur adipiscing elit. Sed do eismod tempor incididunt.
+</p>
+<p class="segundo">
+    Lorem ipsum dolor sit amet, <span class="destaque">consectetur</span>
+    adipiscing elit. Ut enim ad minim veniam.
+  </p>
+  <p class="terceiro">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <span class="destaque">Quis nostrud</span> exercitation ullamco.
+  </p>
+  <p class="quarto">
+    Lorem ipsum dolor sit amet, <span class="destaque">laboris</span>
+    nisi ut aliquip ex ea commodo consequat.
+  </p>
+</body>
+</html>

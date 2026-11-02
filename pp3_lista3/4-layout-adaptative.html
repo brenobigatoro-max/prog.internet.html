@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Layout adaptativo com media query</title>
+  <style>
+
+    * { box-sizing: border-box; }
+
+    body { margin: 0; padding: 20px; font-family: Arial, sans-serif; }
+
+    .layout {
+
+      display: grid;
+
+      width: min(1100px, 100%);
+
+      min-height: calc(100vh - 40px);
+
+      margin: auto;
+
+      padding: 8px;
+
+      background: #e4e8eb;
+
+      gap: 6px;
+
+      grid-template-columns: 1fr 4fr 1fr;
+
+      grid-template-rows: 60px 48px minmax(300px, 1fr) 48px 42px;
+
+      grid-template-areas:
+
+        "cabecalho cabecalho cabecalho"
+
+        "esquerda banner direita"
+
+        "esquerda principal direita"
+
+        "esquerda baixo direita"
+
+        "rodape rodape rodape";
+
+    }
+
+    .layout > * { display: grid; place-items: center; padding: 12px; }
+
+    header { grid-area: cabecalho; background: #edb900; }
+
+    .banner { grid-area: banner; background: #d93e31; }
+
+    .esquerda { grid-area: esquerda; background: #0a9858; }
+
+    main { grid-area: principal; background: #3b7ee9; font-weight: bold; }
+
+    .direita { grid-area: direita; background: #edb900; }
+
+    .baixo { grid-area: baixo; background: #0a9858; }
+
+    footer { grid-area: rodape; background: #3b7ee9; }
+
+    @media screen and (max-width: 700px) {
+
+      body { padding: 12px; }
+
+      .layout {
+
+        min-height: calc(100vh - 24px);
+
+        grid-template-columns: 1fr;
+
+        grid-template-rows: 54px 48px 54px minmax(300px, 1fr) 54px 48px 42px;
+
+        grid-template-areas:
+
+          "cabecalho"
+
+          "banner"
+
+          "esquerda"
+
+          "principal"
+
+          "direita"
+
+          "baixo"
+
+          "rodape";
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="layout">
+
+    <header>Header</header>
+
+    <div class="banner">Banner</div>
+
+    <aside class="esquerda">Left Aside</aside>
+
+    <main>Main Content</main>
+
+    <aside class="direita">Right Aside</aside>
+
+    <section class="baixo" aria-label="Conteúdo inferior">Low Content</section>
+
+    <footer>Footer</footer>
+  </div>
+</body>
+</html>

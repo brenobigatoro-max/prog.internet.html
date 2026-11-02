@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Template com CSS Grid</title>
+
+  <style>
+
+    * { box-sizing: border-box; }
+
+    body {
+
+      margin: 0;
+
+      min-height: 100vh;
+
+      display: grid;
+
+      place-items: center;
+
+      padding: 24px;
+
+      font-family: Arial, sans-serif;
+
+    }
+
+    .grade {
+
+      display: grid;
+
+      width: min(640px, 100%);
+
+      aspect-ratio: 4 / 3;
+
+      grid-template-columns: 1fr 1.5fr 1fr;
+
+      grid-template-rows: repeat(4, 1fr);
+
+      grid-template-areas:
+
+        "um um um"
+
+        "dois tres quatro"
+
+        "cinco tres seis"
+
+        "cinco sete sete";
+
+      gap: 8px;
+
+    }
+
+    .bloco {
+
+      display: grid;
+
+      place-items: center;
+
+      border-radius: 8px;
+
+      background: #ffda7c;
+
+      font-size: 26px;
+
+      font-weight: bold;
+
+    }
+
+    .um { grid-area: um; }
+
+    .dois { grid-area: dois; background: #f23c68; }
+
+    .tres { grid-area: tres; }
+
+    .quatro { grid-area: quatro; background: #f23c68; }
+
+    .cinco { grid-area: cinco; }
+
+    .seis { grid-area: seis; background: #f23c68; }
+
+    .sete { grid-area: sete; }
+
+  </style>
+</head>
+<body>
+
+  <main class="grade" aria-label="Layout com sete blocos">
+
+    <div class="bloco um">1</div>
+
+    <div class="bloco dois">2</div>
+
+    <div class="bloco tres">3</div>
+
+    <div class="bloco quatro">4</div>
+
+    <div class="bloco cinco">5</div>
+
+    <div class="bloco seis">6</div>
+
+    <div class="bloco sete">7</div>
+  </main>
+</body>
+</html>

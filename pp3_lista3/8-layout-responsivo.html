@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Composição responsiva abaixo de 500 pixels</title>
+
+  <style>
+
+    * { box-sizing: border-box; }
+
+    body {
+
+      margin: 0;
+
+      min-height: 100vh;
+
+      display: grid;
+
+      place-items: center;
+
+      padding: 24px;
+
+      background: #eeecef;
+
+    }
+
+    .mosaico {
+
+      display: grid;
+
+      width: min(700px, 100%);
+
+      height: 350px;
+
+      padding: 6px;
+
+      gap: 6px;
+
+      background: white;
+
+      box-shadow: 0 8px 10px #0002;
+
+      grid-template-columns: .55fr 2fr 1fr 1.4fr;
+
+      grid-template-rows: 1.2fr 1.5fr .25fr 1fr;
+
+      grid-template-areas:
+
+        "icones azul azul laranja"
+
+        "icones rosa ciano laranja"
+
+        "salmao salmao ciano laranja"
+
+        "salmao salmao verde verde";
+
+    }
+
+    .icones {
+
+      grid-area: icones;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      justify-content: space-around;
+
+      gap: 6px;
+
+    }
+
+    .icones > span { width: 22px; height: 22px; border-radius: 50%; }
+
+    .icones > span:nth-child(1) { background: #f59973; }
+
+    .icones > span:nth-child(2) { background: #bdc99b; }
+
+    .icones > span:nth-child(3) { background: #d3c6e1; }
+
+    .icones > span:nth-child(4) { background: #f59b1b; }
+
+    .azul { grid-area: azul; background: #b5c6dd; }
+
+    .laranja { grid-area: laranja; background: #f6b52d; }
+
+    .rosa { grid-area: rosa; background: #d3afaf; }
+
+    .ciano { grid-area: ciano; background: #c9e0df; }
+
+    .salmao { grid-area: salmao; background: #f2b4a3; }
+
+    .verde { grid-area: verde; background: #b6c96e; }
+
+    @media screen and (width < 500px) {
+
+      body { padding: 14px; }
+
+      .mosaico {
+
+        height: auto;
+
+        grid-template-columns: 1fr 1fr;
+
+        grid-template-rows: 54px 90px 110px 100px 90px;
+
+        grid-template-areas:
+
+          "icones icones"
+
+          "azul azul"
+
+          "rosa ciano"
+
+          "laranja laranja"
+
+          "salmao verde";
+
+      }
+
+      .icones { flex-direction: row; justify-content: center; gap: 18px; }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <main class="mosaico" aria-label="Composição geométrica responsiva">
+
+    <div class="icones" aria-hidden="true">
+
+      <span></span><span></span><span></span><span></span>
+
+    </div>
+
+    <div class="azul" aria-label="Retângulo azul"></div>
+
+    <div class="laranja" aria-label="Retângulo laranja"></div>
+
+    <div class="rosa" aria-label="Retângulo rosa"></div>
+
+    <div class="ciano" aria-label="Retângulo ciano"></div>
+
+    <div class="salmao" aria-label="Retângulo salmão"></div>
+
+    <div class="verde" aria-label="Retângulo verde"></div>
+
+  </main>
+</body>
+</html>

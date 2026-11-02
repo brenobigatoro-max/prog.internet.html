@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Caixas nos cantos e no centro</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    .palco { position: relative; width: 100vw; height: 100vh; }
+    .caixa {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      font: 12px Arial, sans-serif;
+    }
+    .um { top: 0; left: 0; background: red; }
+    .dois { top: 0; right: 0; background: yellow; }
+    .tres { bottom: 0; left: 0; background: blue; }
+    .quatro { bottom: 0; right: 0; background: green; }
+    .cinco {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: magenta;
+    }
+  </style>
+</head>
+<body>
+  <main class="palco" aria-label="Cinco caixas posicionadas">
+    <div class="caixa um">box1</div>
+    <div class="caixa dois">box2</div>
+    <div class="caixa tres">box3</div>
+    <div class="caixa quatro">box4</div>
+    <div class="caixa cinco">box5</div>
+  </main>
+</body>
+</html>

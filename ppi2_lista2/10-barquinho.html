@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Barquinho animado com imagem de fundo</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    .cena {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      background: linear-gradient(#fff, #c3e7f2);
+    }
+    .nuvem {
+      position: absolute;
+      top: 30%;
+      left: -200px;
+      width: 130px;
+      height: 42px;
+      border-radius: 60px;
+      background: #f8fdff;
+      box-shadow: 24px -20px #f8fdff, 62px -8px #f8fdff;
+      animation: nuvem 28s linear -6s infinite;
+    }
+    .mar {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 30%;
+      background: #4559ff;
+      z-index: 2;
+    }
+    .mar::before, .mar::after {
+      content: "";
+      position: absolute;
+      top: -12px;
+      left: 0;
+      width: calc(100% + 100px);
+      height: 26px;
+      background-image: radial-gradient(
+        ellipse at 50% 100%, #4559ff 60%, transparent 62%);
+      background-size: 100px 26px;
+      animation: ondas 3s linear infinite;
+    }
+    .mar::after {
+      top: 20px;
+      opacity: .4;
+      animation-direction: reverse;
+      animation-duration: 4s;
+    }
+    .trajeto {
+      position: absolute;
+      bottom: 26%;
+      left: -160px;
+      z-index: 3;
+      animation: navegar 18s linear -6s infinite;
+    }
+    .barco {
+      width: 140px;
+      height: 140px;
+      background-image: url("imagens/barco.svg");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      transform-origin: 50% 85%;
+      animation: balancar 2.4s ease-in-out infinite;
+    }
+    @keyframes navegar {
+      from { left: -160px; }
+      to { left: 100%; }
+    }
+    @keyframes balancar {
+      0%, 100% { transform: translateY(0) rotate(-4deg); }
+      50% { transform: translateY(6px) rotate(4deg); }
+    }
+    @keyframes nuvem {
+      from { left: -200px; }
+      to { left: 100%; }
+    }
+    @keyframes ondas {
+      from { transform: translateX(0); }
+      to { transform: translateX(-100px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .trajeto, .barco, .nuvem, .mar::before, .mar::after { animation: none; }
+      .trajeto { left: 40%; }
+      .nuvem { left: 20%; }
+    }
+  </style>
+</head>
+<body>
+  <main class="cena" role="img" aria-label="Barquinho no mar com nuvem em movimento">
+    <div class="nuvem"></div>
+    <div class="mar"></div>
+    <div class="trajeto"><div class="barco"></div></div>
+  </main>
+</body>
+</html>

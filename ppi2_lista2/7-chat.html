@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chat com float e posicionamento</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; background: white; }
+    .chat {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 350px;
+      max-width: calc(100vw - 40px);
+      max-height: calc(100vh - 40px);
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 12px;
+      font-family: "Times New Roman", serif;
+    }
+    .mensagem {
+      position: relative;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 12px 12px 25px;
+      margin-bottom: 13px;
+      background: white;
+    }
+    .mensagem::after, .entrada::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    .nome {
+      position: absolute;
+      top: -9px;
+      left: 12px;
+      padding: 0 3px;
+      background: white;
+      color: #888;
+      font-size: 11px;
+    }
+    .avatar {
+      float: left;
+      width: 32px;
+      height: 32px;
+      margin-right: 10px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 32px;
+      font-size: 25px;
+    }
+    .mensagem p { margin: 0; }
+    .hora {
+      position: absolute;
+      right: 12px;
+      bottom: 6px;
+      color: #999;
+      font-size: 11px;
+    }
+    .enviada { background: #d5fbd5; text-align: right; }
+    .enviada .nome { background: #d5fbd5; }
+    .enviada .avatar {
+      float: right;
+      margin-right: 0;
+      margin-left: 10px;
+      background: #ffefc6;
+    }
+    .entrada { padding: 12px; border: 1px solid #ccc; border-radius: 5px; }
+    textarea {
+      display: block;
+      width: 100%;
+      min-height: 72px;
+      resize: vertical;
+      padding: 7px;
+      border: 1px solid #ccc;
+    }
+    button { float: right; margin-top: 6px; }
+  </style>
+</head>
+<body>
+  <main class="chat" aria-label="Conversa de exemplo">
+    <article class="mensagem recebida">
+      <span class="nome">Pedro Silva</span>
+      <span class="avatar" aria-hidden="true">👨🏻‍💼</span>
+      <p>Olá, tudo bem?</p>
+      <time class="hora" datetime="00:50">00:50</time>
+    </article>
+    <article class="mensagem enviada">
+      <span class="nome">Eu</span>
+      <span class="avatar" aria-hidden="true">👩🏻‍💼</span>
+      <p>Estou bem sim, e você?</p>
+      <time class="hora" datetime="00:55">00:55</time>
+    </article>
+    <article class="mensagem recebida">
+      <span class="nome">Pedro Silva</span>
+      <span class="avatar" aria-hidden="true">👨🏻‍💼</span>
+      <p>Vamos sair hoje? sabe conversar e Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Illum ducimus</p>
+      <time class="hora" datetime="01:01">01:01</time>
+    </article>
+    <article class="mensagem enviada">
+      <span class="nome">Eu</span>
+      <span class="avatar" aria-hidden="true">👩🏻‍💼</span>
+      <p>Criatura .....</p>
+      <time class="hora" datetime="00:55">00:55</time>
+    </article>
+    <div class="entrada">
+      <textarea aria-label="Mensagem" placeholder="Digite sua mensagem"></textarea>
+      <button type="button">Enviar</button>
+    </div>
+  </main>
+</body>
+</html>

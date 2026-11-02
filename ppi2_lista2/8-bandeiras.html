@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bandeiras desenhadas com CSS</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 24px; font-family: Arial, sans-serif; }
+    nav a { display: inline-block; margin: 4px 12px 4px 0; }
+    .bandeira {
+      position: relative;
+      width: 300px;
+      height: 180px;
+      overflow: hidden;
+      outline: 1px solid #94a3b8;
+      margin-bottom: 32px;
+      scroll-margin-top: 20px;
+    }
+    #japao.bandeira { background: white; }
+    #japao.bandeira > div.circulo {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      top: 40px;
+      left: 100px;
+      border-radius: 50%;
+      background: #bc002d;
+    }
+    #alemanha.bandeira {
+      background: linear-gradient(to bottom,
+        #000 0 33.333%, #d00 33.333% 66.666%,
+        #ffce00 66.666% 100%);
+    }
+    #holanda.bandeira {
+      background: linear-gradient(to bottom,
+        #ae1c28 0 33.333%, #fff 33.333% 66.666%,
+        #21468b 66.666% 100%);
+    }
+    #italia.bandeira {
+      background: linear-gradient(to right,
+        #009246 0 33.333%, #fff 33.333% 66.666%,
+        #ce2b37 66.666% 100%);
+    }
+    #brasil.bandeira { background: #009739; }
+    #brasil.bandeira > div.losango {
+      position: absolute;
+      inset: 18px 24px;
+      background: #ffdf00;
+      clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    }
+    #brasil.bandeira > div.circulo {
+      position: absolute;
+      width: 90px;
+      height: 90px;
+      top: 45px;
+      left: 105px;
+      border-radius: 50%;
+      background: #002776;
+      overflow: hidden;
+    }
+    #brasil.bandeira > div.circulo::before {
+      content: "ORDEM E PROGRESSO";
+      position: absolute;
+      top: 29px;
+      left: -8px;
+      width: 110px;
+      padding: 4px 0;
+      background: white;
+      color: #006b3f;
+      font: bold 6px Arial, sans-serif;
+      text-align: center;
+      transform: rotate(12deg);
+    }
+    #brasil.bandeira > div.circulo::after {
+      content: "";
+      position: absolute;
+      top: 58px;
+      left: 22px;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: white;
+      box-shadow: 16px 8px white, 31px 1px white,
+        38px 14px white, 8px 19px white, 24px 22px white;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bandeiras com HTML e CSS</h1>
+  <nav aria-label="Bandeiras">
+    <a href="#japao">Bandeira Japão</a>
+    <a href="#alemanha">Bandeira Alemanha</a>
+    <a href="#holanda">Bandeira Holanda</a>
+    <a href="#italia">Bandeira Itália</a>
+    <a href="#brasil">Bandeira Brasil</a>
+  </nav>
+  <h2>Japão</h2>
+  <div class="bandeira" id="japao" role="img" aria-label="Japão">
+    <div class="circulo"></div>
+  </div>
+  <h2>Alemanha</h2>
+  <div class="bandeira" id="alemanha" role="img" aria-label="Alemanha">
+  </div>
+  <h2>Holanda</h2>
+  <div class="bandeira" id="holanda" role="img" aria-label="Holanda">
+  </div>
+  <h2>Itália</h2>
+  <div class="bandeira" id="italia" role="img" aria-label="Itália">
+  </div>
+  <h2>Brasil</h2>
+  <div class="bandeira" id="brasil" role="img" aria-label="Brasil">
+    <div class="losango"></div>
+    <div class="circulo"></div>
+  </div>
+</body>
+</html>

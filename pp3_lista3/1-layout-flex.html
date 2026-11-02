@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Layout com Flexbox</title>
+  <style>
+
+    * { box-sizing: border-box; }
+
+    html, body { margin: 0; }
+
+    body { font-family: Arial, sans-serif; }
+
+    .janela {
+
+      display: flex;
+
+      flex-direction: column;
+
+      width: 100vw;
+
+      height: 100vh;
+
+      overflow: hidden;
+
+    }
+
+    .barra {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 16px;
+
+      flex: 0 0 18%;
+
+      padding: 24px 5%;
+
+      background: #262626;
+
+      border-radius: 12px 12px 0 0;
+
+    }
+
+    .barra > span {
+
+      width: 30px;
+
+      height: 30px;
+
+      border-radius: 50%;
+
+      background: #00b8b5;
+
+    }
+
+    .estrutura { display: flex; flex: 1; min-height: 0; }
+
+    nav {
+
+      flex: 0 0 23%;
+
+      padding: 24px 8px;
+
+      background: #ff872b;
+
+    }
+
+    .coluna {
+
+      display: flex;
+
+      flex-direction: column;
+
+      flex: 1;
+
+      min-width: 0;
+
+    }
+
+    header { flex: 0 0 16%; background: #06a8ce; }
+
+    main { flex: 1; background: #604c9a; }
+
+    footer { flex: 0 0 16%; background: #0a91b7; }
+
+    header, main, footer { padding: 24px 8px; }
+
+    nav, header, main, footer {
+
+      text-align: center;
+
+      color: white;
+
+      font-weight: bold;
+
+      font-size: clamp(12px, 2vw, 18px);
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="janela">
+
+    <div class="barra" aria-hidden="true">
+
+      <span></span><span></span><span></span>
+
+    </div>
+
+    <div class="estrutura">
+
+      <nav aria-label="Navegação">NAVEGAÇÃO</nav>
+
+      <div class="coluna">
+
+        <header>CABEÇALHO</header>
+
+        <main>CONTEÚDO</main>
+
+        <footer>RODAPÉ</footer>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>

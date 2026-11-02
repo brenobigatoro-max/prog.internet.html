@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Perfil no formato da referência</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 24px; font: 12px/1.5 Arial, sans-serif; }
+    .perfil { max-width: 720px; margin: auto; }
+    .perfil::after { content: ""; display: block; clear: both; }
+    .lateral {
+      float: left;
+      width: 28%;
+      min-height: 690px;
+      padding: 18px 16px;
+      background: #424a55;
+      color: white;
+    }
+    .foto {
+      width: 144px;
+      height: 144px;
+      max-width: 100%;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      background-image: url("imagens/referencia-perfil.png");
+      background-size: 1189.5px 939px;
+      background-position: -145.5px -135px;
+      background-repeat: no-repeat;
+    }
+    .lateral h2 {
+      font-size: 14px;
+      border-bottom: 1px solid #a7adb5;
+      padding-bottom: 8px;
+    }
+    .lateral dl { margin: 16px 0; }
+    .lateral dt { margin-top: 10px; font-weight: bold; }
+    .lateral dd { margin: 0; overflow-wrap: anywhere; }
+    .conteudo { margin-left: 28%; padding: 0 20px; color: #444; }
+    h1 { margin: 0 0 14px; font-size: 28px; }
+    .resumo { border-top: 1px solid #ddd; padding-top: 14px; }
+    .conteudo h2 {
+      font-size: 16px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 12px;
+      margin-top: 24px;
+    }
+    .cargo { position: relative; padding-right: 82px; margin-top: 18px; }
+    .cargo h3 { margin: 0; font-size: 13px; }
+    .periodo { position: absolute; top: 0; right: 0; color: #777; }
+    .empresa { margin: 3px 0; font-style: italic; }
+    .cargo ul { padding-left: 16px; margin-top: 5px; }
+    @media screen and (max-width: 600px) {
+      body { padding: 12px; }
+      .lateral { float: none; width: 100%; min-height: 0; }
+      .conteudo { margin-left: 0; padding: 20px 0; }
+    }
+  </style>
+</head>
+<body>
+  <main class="perfil">
+    <aside class="lateral">
+      <div class="foto" role="img" aria-label="Retrato do perfil de exemplo"></div>
+      <h2>Pessoal</h2>
+      <dl>
+        <dt>Nome</dt><dd>Joana Barbosa</dd>
+        <dt>Endereço</dt><dd>Rua da Paz, 250<br>7100-011 Lisboa</dd>
+        <dt>Número de telefone</dt><dd>963000212</dd>
+        <dt>Email</dt><dd>exemplos@cvmaker.pt</dd>
+      </dl>
+      <h2>Interesses</h2>
+      <p>Marketing digital</p>
+    </aside>
+    <section class="conteudo">
+      <h1>Joana Barbosa</h1>
+      <p class="resumo">Uma marketer digital com sentido de missão e com mais
+        de três anos de experiência em conduzir iniciativas promocionais.
+        Sou uma especialista em online marketing, lead generation e nurturing.
+        Tenho uma comunicação exemplar, aptidões interpessoais e trabalho bem
+        sob pressão de forma a atingir os objetivos.</p>
+      <h2>Experiência profissional</h2>
+      <article class="cargo">
+        <h3>Junior SEO Marketer</h3>
+        <span class="periodo">2017 - 2019</span>
+        <p class="empresa">Cyanca, Lisboa</p>
+        <ul>
+          <li>Página on/off SEO</li>
+          <li>Estratégias de linkbuilding</li>
+          <li>Criação de conteúdo relevante</li>
+          <li>Trabalho com ferramentas online: Ahrefs, Google Analytics,
+            Google Search Console e Google Adwords</li>
+        </ul>
+      </article>
+      <article class="cargo">
+        <h3>Assistente de Vendas</h3>
+        <span class="periodo">2015 - 2016</span>
+        <p class="empresa">Salsa, Lisboa</p>
+        <ul>
+          <li>Contribuição para os objetivos de vendas</li>
+          <li>Gestão de inventário</li>
+          <li>Apoio a clientes</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

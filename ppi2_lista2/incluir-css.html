@@ -4,15 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Formas de incluir CSS no HTML</title>
-  <link rel="stylesheet" href="3-estilos.css">
+  <link rel="stylesheet" href="3-estilo.css">
   <style>
     .interno { color: #18713c; }
   </style>
 </head>
 <body>
   <h1>Três formas de incluir CSS</h1>
-  <p class="externo">Este parágrafo recebe CSS de 3-estilos.css.</p>
+  <p class="externo">Este parágrafo recebe CSS de 3-estilo.css.</p>
   <p class="interno">Este parágrafo recebe CSS da tag style.</p>
   <p style="color: #a52a2a;">Este parágrafo recebe CSS inline.</p>
+  <p>O CSS externo é carregado por <code>&lt;link rel="stylesheet" href="3-estilo.css"&gt;</code>
+    no cabeçalho. Ele permite reutilizar as mesmas regras em várias páginas.</p>
+  <p>O CSS interno fica em um elemento <code>&lt;style&gt;</code> no cabeçalho do HTML.</p>
+  <p>O CSS inline fica no atributo <code>style</code> do próprio elemento.</p>
+  <p><a href="index.html">Voltar à lista CSS 1</a></p>
 </body>
 </html>

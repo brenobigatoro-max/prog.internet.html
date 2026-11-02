@@ -28,5 +28,29 @@
     <!-- item 8 -->
     <li id="lip7" class="churras" draggable="true">Pão de alho</li>
   </ol>
+  <h2>Por que cada cor foi aplicada?</h2>
+  <p>Neste exemplo, todas as regras pertencem à mesma origem e não usam
+    <code>!important</code> nem camadas. A especificidade decide entre as regras correspondentes.
+    A ordem no arquivo desempata especificidades iguais.</p>
+  <p>As tuplas abaixo contam, nesta ordem: IDs; classes, atributos e pseudoclasses;
+    elementos e pseudoelementos. Combinadores como <code>+</code> e <code>&gt;</code> não somam pontos.</p>
+  <table>
+    <caption>Resultado das oito regras</caption>
+    <thead><tr><th scope="col">Item</th><th scope="col">Cor</th><th scope="col">Justificativa</th></tr></thead>
+    <tbody>
+      <tr><td>Abacaxi</td><td>Vermelho</td><td>Apenas a regra 1, li (0,0,1), corresponde.</td></tr>
+      <tr><td>Melão</td><td>Cinza</td><td>A regra 3, .fruta (0,1,0), supera li.</td></tr>
+      <tr><td>Pera</td><td>Azul</td><td>A regra 6, #lip2 (1,0,0), supera .fruta e li.</td></tr>
+      <tr><td>Uva</td><td>Laranja</td><td>A regra 7, #lip3.fruta (1,1,0), supera #lip3 (1,0,0).</td></tr>
+      <tr><td>Maçã</td><td>Cinza</td><td>Seu ID lip4 não está na regra 6; vence .fruta.</td></tr>
+      <tr><td>Carne</td><td>Preto</td><td>A regra 4, li + li.churras (0,1,2), corresponde porque o irmão anterior é um li (Maçã). Ela supera .churras.</td></tr>
+      <tr><td>Linguiça</td><td>Preto</td><td>A regra 4 também corresponde: o irmão anterior é um li (Carne).</td></tr>
+      <tr><td>Pão de alho</td><td>Magenta</td><td>A regra 5, .churras[draggable="true"] (0,2,0), supera a regra 4 (0,1,2).</td></tr>
+    </tbody>
+  </table>
+  <p>A regra 8, <code>ol &gt; li.churras#lip5</code> (1,1,2), não se aplica:
+    nenhum item tem o ID lip5. Na regra 6, cada seletor separado por vírgula
+    é avaliado individualmente; os IDs não são somados.</p>
+  <p><a href="index.html">Voltar à lista CSS 1</a></p>
 </body>
 </html>

@@ -1,0 +1,32 @@
+[
+  {
+    "file": "imagens/paisagem-1.jpg",
+    "endpoint": "https://picsum.photos/id/10/800/600",
+    "author": "Paul Jarvis",
+    "source": "https://unsplash.com/photos/6J--NXulQCs"
+  },
+  {
+    "file": "imagens/paisagem-2.jpg",
+    "endpoint": "https://picsum.photos/id/15/800/600",
+    "author": "Paul Jarvis",
+    "source": "https://unsplash.com/photos/NYDo21ssGao"
+  },
+  {
+    "file": "imagens/paisagem-3.jpg",
+    "endpoint": "https://picsum.photos/id/29/800/600",
+    "author": "Go Wild",
+    "source": "https://unsplash.com/photos/V0yAek6BgGk"
+  },
+  {
+    "file": "imagens/paisagem-4.jpg",
+    "endpoint": "https://picsum.photos/id/28/800/600",
+    "author": "Jerry Adney",
+    "source": "https://unsplash.com/photos/_WiFMBRT7Aw"
+  },
+  {
+    "file": "imagens/paisagem-5.jpg",
+    "endpoint": "https://picsum.photos/id/16/800/600",
+    "author": "Paul Jarvis",
+    "source": "https://unsplash.com/photos/gkT4FfgHO5o"
+  }
+]
